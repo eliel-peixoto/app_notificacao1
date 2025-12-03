@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { Button } from 'react-native-web';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import api from '../services/api';
 
 const UserRegisterScreen = () => {
 
@@ -11,14 +11,14 @@ const UserRegisterScreen = () => {
 
     const handleSave = async () => {
         try {
-            await api.post('/usuarios', nome, email, senha)
+            await api.post('/usuarios', {nome, email, senha})
         } catch (error){
             console.error('Erro ao cadastrar usuário', error)
         }
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <TextInput
                 placeholder="Nome"
                 value={nome}
@@ -38,9 +38,13 @@ const UserRegisterScreen = () => {
                 secureTextEntry
             />
 
-            <Button onPress={handleSave}></Button>
+            <Button title='Cadastrar' onPress={handleSave}></Button>
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+
+})
 
 export default UserRegisterScreen;
