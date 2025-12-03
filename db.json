@@ -2,8 +2,15 @@
   "usuarios": [
     {
       "nome": "Mateus",
-      "email":"juanmateus565@gmail.com",
-      "senha": 12345678
+      "email": "juanmateus565@gmail.com",
+      "senha": 12345678,
+      "id": "ae58"
+    },
+    {
+      "id": "4f2b",
+      "nome": "Eliel",
+      "email": "eliel@gmail.com",
+      "senha": "1234"
     }
   ]
 }
