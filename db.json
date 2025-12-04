@@ -11,6 +11,12 @@
       "nome": "Eliel",
       "email": "eliel@gmail.com",
       "senha": "1234"
+    },
+    {
+      "id": "e3e7",
+      "nome": "Emilly",
+      "email": "evna@discente.ifpe.edu.br",
+      "senha": "4321"
     }
   ]
 }

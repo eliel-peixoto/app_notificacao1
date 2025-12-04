@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
 import api from '../services/api';
+import { registerForPushNotificationsAsync } from '../notifications/notifications';
 
 const LoginScreen = ({navigation}) => {
 
@@ -15,7 +16,23 @@ const LoginScreen = ({navigation}) => {
                 const usuarioEncontrado = response.data[0];
 
                 if (usuarioEncontrado){
-                    navigation.navigate('Home');
+
+                    const token = await registerForPushNotificationsAsync();
+
+                    if (token) {
+                        await api.patch(`/usuarios/${usuarioEncontrado.id}`, {
+                            expoPushToken: token
+                        });
+                    }
+
+
+                    navigation.navigate('Home', {
+                        usuario: {
+                            ...usuarioEncontrado,
+                            expoPushToken: token
+                        }
+                    });
+
                 }else{
                     alert('Usuário ou senha inválidos')
                 }

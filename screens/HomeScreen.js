@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import UserCard from '../components/UserCard';
+import UserItem from '../components/UserItem';
 import api from '../services/api';
 
 const HomeScreen = ({navigation}) => {
     const [usuarios, setUsuarios] = useState([]);
+
+    const [usuarioSelecionado, setUsuarioSelecionado] = useState(null);
 
     const fetchUsuarios = async () => {
         try {
@@ -32,6 +35,14 @@ const HomeScreen = ({navigation}) => {
                 <UserCard usuario={item} onPress={() => handlePress(item)}/>
             )}
             />
+
+            {/* Modal UserItem */}
+            {usuarioSelecionado && (
+                <UserItem
+                    user={usuarioSelecionado}
+                    onClose={() => setUsuarioSelecionado(null)}
+                />
+            )}
         </View>
     );
 }
