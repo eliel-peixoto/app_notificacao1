@@ -12,6 +12,7 @@ const UserRegisterScreen = () => {
     const handleSave = async () => {
         try {
             await api.post('/usuarios', {nome, email, senha})
+            navigation.goback();
         } catch (error){
             console.error('Erro ao cadastrar usuário', error)
         }
