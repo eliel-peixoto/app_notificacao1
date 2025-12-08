@@ -36,11 +36,6 @@ const LoginScreen = ({navigation}) => {
                 }else{
                     alert('Usuário ou senha inválidos')
                 }
-                /*if (response.data.length > 0) {
-                    navigation.navigate('Home');
-                }else{
-                    alert('Usuário ou senha inválidos');
-                }*/
             }catch (error){
                 console.error('Usuário não encontrado', error);
             }
