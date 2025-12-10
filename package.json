@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start --dev-client",
+    "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
@@ -13,8 +13,7 @@
     "@react-navigation/stack": "^7.6.12",
     "axios": "^1.13.2",
     "expo": "~54.0.25",
-    "expo-dev-client": "^6.0.18",
-    "expo-notifications": "^0.32.14",
+    "expo-notifications": "~0.32.14",
     "expo-status-bar": "~3.0.8",
     "json-server": "^1.0.0-beta.3",
     "react": "19.1.0",

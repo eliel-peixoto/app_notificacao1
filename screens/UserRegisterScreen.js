@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import api from '../services/api';
 
-const UserRegisterScreen = () => {
+const UserRegisterScreen = ({navigation}) => {
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ const UserRegisterScreen = () => {
     const handleSave = async () => {
         try {
             await api.post('/usuarios', {nome, email, senha})
-            navigation.goback();
+            navigation.goBack();
         } catch (error){
             console.error('Erro ao cadastrar usuário', error)
         }

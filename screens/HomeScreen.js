@@ -24,8 +24,7 @@ const HomeScreen = ({navigation}) => {
     }, [navigation]);
 
     const handlePress = (usuario) => {
-        navigation.navigate('Alteracao', {usuario})
-        // alterar dps para abrir o modal
+        setUsuarioSelecionado(usuario);
     };
 
     return (

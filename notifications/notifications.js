@@ -16,5 +16,8 @@ export async function registerForPushNotificationsAsync() {
     }
 
     const token = (await Notifications.getExpoPushTokenAsync()).data;
+
+    console.log('📲 Token gerado:', token);
+    
     return token;
 }

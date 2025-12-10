@@ -15,6 +15,7 @@ export default function UserItem({ user, onClose }) {
     await fetch("https://exp.host/--/api/v2/push/send", {
       method: "POST",
       headers: {
+        Host: "exp.host",
         Accept: "application/json",
         "Accept-encoding": "gzip, deflate",
         "Content-Type": "application/json",

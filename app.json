@@ -3,6 +3,7 @@
     "name": "app_notificacao",
     "slug": "app_notificacao",
     "version": "1.0.0",
+
     "extra": {
       "eas": {
         "projectId": "ee0866e4-e12a-4298-9028-cce53ac0f072"

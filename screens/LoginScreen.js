@@ -19,6 +19,8 @@ const LoginScreen = ({navigation}) => {
 
                     const token = await registerForPushNotificationsAsync();
 
+                    console.log("Token gerado:", expoPushToken);
+
                     if (token) {
                         await api.patch(`/usuarios/${usuarioEncontrado.id}`, {
                             expoPushToken: token
